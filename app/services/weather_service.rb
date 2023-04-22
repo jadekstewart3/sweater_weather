@@ -13,6 +13,5 @@ class WeatherService
       req.params["tp"] = 60
     end
     parsed = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
   end
 end
