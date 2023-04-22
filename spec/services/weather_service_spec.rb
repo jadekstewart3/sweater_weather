@@ -9,7 +9,6 @@ RSpec.describe WeatherService do
        end
       it "returns the weather forecast information" do 
         expect(@forecast).to be_a(Hash)
-
         expect(@forecast).to have_key(:location)
         expect(@forecast[:location]).to be_a(Hash)
 
