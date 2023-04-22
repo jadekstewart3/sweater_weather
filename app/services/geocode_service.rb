@@ -12,5 +12,5 @@ class GeocodeService
    end
    parsed = JSON.parse(response.body, symbolize_names: true)
    parsed[:results][0][:locations][0][:latLng]
- end
+  end
 end
