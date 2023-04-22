@@ -1,7 +1,7 @@
 require "rails_helper"
 RSpec.describe GeocodeService do
  describe "#instance methods" do
-   describe "#get_lat_and_long" do
+   describe "#get_lat_and_long", :vcr do
     it "returns the latitude and longitude of a queried city and state" do
       coordinates = GeocodeService.new.get_coordinates("denver, co") 
 
