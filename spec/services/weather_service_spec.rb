@@ -1,13 +1,13 @@
 require "rails_helper"
 
-RSpec.describe WeatherService do 
-  describe "#instance methods" do 
+RSpec.describe WeatherService do
+  describe "#instance methods" do
     describe "#forecast", :vcr do
-       before :each do 
-        coordinates = { lat: 39.74001, lng:-104.99202 }
+      before :each do
+        coordinates = { lat: 39.74001, lng: -104.99202 }
         @forecast = WeatherService.new.forecast(coordinates)
-       end
-      it "returns the weather forecast information" do 
+      end
+      it "returns the weather forecast information" do
         expect(@forecast).to be_a(Hash)
         expect(@forecast).to have_key(:location)
         expect(@forecast[:location]).to be_a(Hash)

@@ -1,9 +1,9 @@
 require "rails_helper"
 
-RSpec.describe WeatherFacade do 
-  describe "#instance_methods" do 
-    describe "#get_forecast", :vcr do 
-      before :each do 
+RSpec.describe WeatherFacade do
+  describe "#instance_methods" do
+    describe "#get_forecast", :vcr do
+      before :each do
         @forecast = WeatherFacade.new.get_forecast("denver, co")
       end
       it "returns a hash with all of the forecast details do" do
@@ -13,7 +13,7 @@ RSpec.describe WeatherFacade do
         expect(@forecast.hourly_weather.first).to be_a(HourlyWeather)
       end
 
-      it "current weather contains desired attributes" do 
+      it "current weather contains desired attributes" do
         current_weather = @forecast.current_weather
 
         expect(current_weather.last_updated).to be_a(String)
@@ -26,7 +26,7 @@ RSpec.describe WeatherFacade do
         expect(current_weather.icon).to be_a(String)
       end
 
-      it "daily weather contains desired attributes" do 
+      it "daily weather contains desired attributes" do
         daily_weather = @forecast.daily_weather
 
         daily_weather.each do |day|
@@ -40,7 +40,7 @@ RSpec.describe WeatherFacade do
         end
       end
 
-      it "hourly weather contains desired attributes" do 
+      it "hourly weather contains desired attributes" do
         hourly_weather = @forecast.hourly_weather
 
         hourly_weather.each do |hour|
