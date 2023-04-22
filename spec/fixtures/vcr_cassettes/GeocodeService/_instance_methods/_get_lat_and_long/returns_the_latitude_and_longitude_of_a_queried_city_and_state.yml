@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.mapquestapi.com/geocoding/v1/address?key=xRaa7pIVnk7V8byw99umU89shiFKcEZ3&location=denver,%20co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Apr 2023 16:58:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '798'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-2628000:
+      - '15000'
+      X-Ratelimit-Remaining-2628000:
+      - '14942'
+      Ratelimit-Limit:
+      - '15000'
+      Ratelimit-Remaining:
+      - '14942'
+      Ratelimit-Reset:
+      - '2365320'
+      X-Powered-By:
+      - MapQuest
+      X-Request-Id:
+      - d6957e20-e12e-11ed-b617-4d5604ae0a0c
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Transaction-Count:
+      - all=1,geocoding=1
+      Etag:
+      - W/"31e-ZwaK1V+fWiSxZu/QFx4vFzjYgrA"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJkZW52ZXIsIGNvIn0sImxvY2F0aW9ucyI6W3sic3RyZWV0IjoiIiwiYWRtaW5BcmVhNiI6IiIsImFkbWluQXJlYTZUeXBlIjoiTmVpZ2hib3Job29kIiwiYWRtaW5BcmVhNSI6IkRlbnZlciIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImFkbWluQXJlYTQiOiJEZW52ZXIiLCJhZG1pbkFyZWE0VHlwZSI6IkNvdW50eSIsImFkbWluQXJlYTMiOiJDTyIsImFkbWluQXJlYTNUeXBlIjoiU3RhdGUiLCJhZG1pbkFyZWExIjoiVVMiLCJhZG1pbkFyZWExVHlwZSI6IkNvdW50cnkiLCJwb3N0YWxDb2RlIjoiIiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiQTVYQVgiLCJnZW9jb2RlUXVhbGl0eSI6IkNJVFkiLCJkcmFnUG9pbnQiOmZhbHNlLCJzaWRlT2ZTdHJlZXQiOiJOIiwibGlua0lkIjoiMCIsInVua25vd25JbnB1dCI6IiIsInR5cGUiOiJzIiwibGF0TG5nIjp7ImxhdCI6MzkuNzQwMDEsImxuZyI6LTEwNC45OTIwMn0sImRpc3BsYXlMYXRMbmciOnsibGF0IjozOS43NDAwMSwibG5nIjotMTA0Ljk5MjAyfSwibWFwVXJsIjoiIn1dfV19
+  recorded_at: Sat, 22 Apr 2023 16:58:00 GMT
+recorded_with: VCR 6.1.0
