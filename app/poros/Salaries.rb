@@ -1,11 +1,13 @@
 class Salaries
   JOBS = ["Data Analyst", "Data Scientist", "Mobile Developer", "QA Engineer", "Software Engineer", "Systems Administrator", "Web Developer"]
 
-  attr_reader :salaries,
+  attr_reader :id,
+              :salaries,
               :destination,
               :forecast
 
   def initialize(data)
+    @id = nil
     @destination = data[:destination]
     @salaries = select_jobs(data[:salaries])
     @forecast = { "summary" => data[:forecast_summary], "temperature" => "#{data[:temperature]} F",}
