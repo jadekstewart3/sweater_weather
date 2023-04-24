@@ -5,7 +5,7 @@ RSpec.describe CityService do
     describe "#get_salaries", :vcr do 
       it "returns salaries of a city" do
         city_salaries = CityService.new.get_salaries("albuquerque")
-        # require 'pry'; binding.pry
+  
         expect(city_salaries).to be_a(Hash)
         expect(city_salaries).to have_key(:salaries)
         expect(city_salaries[:salaries]).to be_an(Array)

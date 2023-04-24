@@ -9,7 +9,6 @@ RSpec.describe "Salaries API", :vcr do
 
     it "returns the weather and the salaries for that city" do 
       expect(response).to be_successful
-      # require 'pry'; binding.pry
       expect(@salaries_response).to have_key(:data)
       expect(@salaries_response[:data]).to be_a(Hash)
       expect(@salaries_response[:data]).to have_key(:attributes)
@@ -44,6 +43,20 @@ RSpec.describe "Salaries API", :vcr do
         expect(job).to have_key(:max)
         expect(job[:max]).to be_a(String)
       end
+    end
+  end
+  
+  describe "when unsuccessful" do 
+    before :each do
+      get "/api/v0/salaries?destination="
+      @salaries = JSON.parse(response.body, symbolize_names: true)
+    end
+
+    it "returns a 400 error if no matches are found" do 
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+      expect(@salaries).to have_key(:errors)
+      expect(@salaries[:errors]).to eq("No matches found")
     end
   end
 end
