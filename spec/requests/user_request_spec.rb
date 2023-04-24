@@ -9,7 +9,7 @@ RSpec.describe "Users API" do
                         password_confirmation: "password"})
 
         headers = {"CONTENT_TYPE" => "application/json"}
-        post "/api/v0/users", headers: headers, params: JSON.generate(user: user_params)
+        post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
         created_user = User.last
 
         expect(response).to be_successful
@@ -24,7 +24,7 @@ RSpec.describe "Users API" do
 
         headers = {"CONTENT_TYPE" => "application/json"}
 
-        post "/api/v0/users", headers: headers, params: JSON.generate(user: user_params)
+        post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
         created_user = User.last
 
         expect(response).to be_successful
@@ -43,7 +43,7 @@ RSpec.describe "Users API" do
 
         headers = { "CONTENT_TYPE" => "application/json" }
 
-        post "/api/v0/users", headers: headers, params: JSON.generate(user: user_params)
+        post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
         expect(response).to have_http_status(404)
         
@@ -74,7 +74,7 @@ RSpec.describe "Users API" do
 
         headers = { "CONTENT_TYPE" => "application/json" }
 
-        post "/api/v0/users", headers: headers, params: JSON.generate(user: user_params)
+        post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
         expect(response).to have_http_status(404)
         
@@ -107,7 +107,7 @@ RSpec.describe "Users API" do
 
         headers = { "CONTENT_TYPE" => "application/json" }
 
-        post "/api/v0/users", headers: headers, params: JSON.generate(user: user_params)
+        post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
         expect(response).to have_http_status(404)
         
