@@ -9,10 +9,16 @@ RSpec.describe User, type: :model do
   end
 
   it "should validate that it's a properly formatted email" do
-    poppy = User.new(email: "popy_rocky_road@gmail.com", password: "password")
+    poppy = User.new(email: "popy_rocky_road@gmail.com", password: "password", password_confirmation: "password")
+
     expect(poppy.valid?).to be(true)
-  
-    poppy = User.new(email: "fasd324223", password: "password")
+    
+    poppy = User.new(email: "fasd324223", password: "password", password_confirmation: "password")
     expect(poppy.valid?).to be(false)
+  end
+
+  it ".set_api_key" do
+    poppy = User.new(email: "popy_rocky_road@gmail.com", password: "password", password_confirmation: "password")
+    expect(poppy.send(:set_api_key)).to be_a(String)
   end
 end
