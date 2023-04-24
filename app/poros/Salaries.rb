@@ -10,7 +10,7 @@ class Salaries
     @id = nil
     @destination = data[:destination]
     @salaries = select_jobs(data[:salaries])
-    @forecast = { "summary" => data[:forecast_summary], "temperature" => "#{data[:temperature]} F",}
+    @forecast = { "summary" => data[:forecast_summary], "temperature" => "#{data[:temperature].round} F",}
   end
 
   def select_jobs(jobs_array)

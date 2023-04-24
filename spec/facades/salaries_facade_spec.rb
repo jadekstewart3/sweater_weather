@@ -14,7 +14,7 @@ RSpec.describe "SalariesFacade" do
        expect(@salaries.forecast).to have_key("summary")
        
        expect(@salaries.forecast["summary"]).to eq("Partly cloudy")
-       expect(@salaries.forecast["temperature"]).to eq("55.0 F")
+       expect(@salaries.forecast["temperature"]).to eq("55 F")
 
         expect(@salaries.salaries.first).to have_key("title")
         expect(@salaries.salaries.first["title"]).to eq("Data Analyst")
