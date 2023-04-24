@@ -9,9 +9,12 @@ RSpec.describe "SalariesFacade" do
       it "returns a sample of city salaries and weather in a salary poro" do 
         expect(@salaries).to be_a(Salaries)
         expect(@salaries.destination).to eq("albuquerque")
-        expect(@salaries. summary).to eq("Partly cloudy")
-        expect(@salaries.temperature).to eq("55.0 F")
-        expect(@salaries.salaries).to be_a(Array)
+      
+       expect(@salaries.forecast).to be_a(Hash)
+       expect(@salaries.forecast).to have_key("summary")
+       
+       expect(@salaries.forecast["summary"]).to eq("Partly cloudy")
+       expect(@salaries.forecast["temperature"]).to eq("55.0 F")
 
         expect(@salaries.salaries.first).to have_key("title")
         expect(@salaries.salaries.first["title"]).to eq("Data Analyst")
