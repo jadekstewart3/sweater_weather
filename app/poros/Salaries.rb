@@ -13,6 +13,8 @@ class Salaries
     @forecast = { "summary" => data[:forecast_summary], "temperature" => "#{data[:temperature].round} F",}
   end
 
+  private
+  
   def select_jobs(jobs_array)
     jobs_array.map do |job|
       if JOBS.include?(job[:job][:title])
