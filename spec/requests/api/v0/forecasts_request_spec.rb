@@ -1,21 +1,20 @@
 require "rails_helper"
 
-RSpec.describe "Forecast API", :vcr do 
-  describe "when successful" do 
-    
-    before :each do 
+RSpec.describe "Forecast API", :vcr do
+  describe "when successful" do
+    before :each do
       get "/api/v0/forecast?location=denver, co"
       @forecast = JSON.parse(response.body, symbolize_names: true)
     end
 
-    it "returns a forecast for a city" do 
+    it "returns a forecast for a city" do
       expect(response).to be_successful
       expect(@forecast).to have_key(:data)
       expect(@forecast[:data]).to be_a(Hash)
       expect(@forecast[:data][:attributes]).to be_a(Hash)
     end
 
-    it "has only the requested keys for current weather" do 
+    it "has only the requested keys for current weather" do
       current_weather_attributes = @forecast[:data][:attributes]
       expect(current_weather_attributes).to have_key(:current_weather)
       expect(current_weather_attributes[:current_weather]).to be_a(Hash)
@@ -48,7 +47,7 @@ RSpec.describe "Forecast API", :vcr do
       expect(current_weather_attributes[:current_weather]).to_not have_key(:gust_kph)
     end
 
-    it "has only the requested keys for daily weather" do 
+    it "has only the requested keys for daily weather" do
       daily_weather_attributes = @forecast[:data][:attributes]
 
       expect(daily_weather_attributes).to have_key(:daily_weather)
@@ -72,7 +71,7 @@ RSpec.describe "Forecast API", :vcr do
       end
     end
 
-    it "has only the requested keys for hourly weather" do 
+    it "has only the requested keys for hourly weather" do
       hourly_weather_attributes = @forecast[:data][:attributes]
       expect(hourly_weather_attributes).to have_key(:hourly_weather)
 
@@ -81,7 +80,7 @@ RSpec.describe "Forecast API", :vcr do
         expect(hour).to have_key(:temperature)
         expect(hour).to have_key(:description)
         expect(hour).to have_key(:icon)
-        
+
         expect(hour).to_not have_key(:time_epoch)
         expect(hour).to_not have_key(:temp_c)
         expect(hour).to_not have_key(:is_day)
@@ -115,13 +114,13 @@ RSpec.describe "Forecast API", :vcr do
       end
     end
 
-    describe "when unsuccessful" do 
-      before :each do 
+    describe "when unsuccessful" do
+      before :each do
         get "/api/v0/forecast?location="
         @forecast = JSON.parse(response.body, symbolize_names: true)
       end
 
-      it "returns a 400 error if no matches are found" do 
+      it "returns a 400 error if no matches are found" do
         expect(response).to_not be_successful
         expect(response).to have_http_status(400)
         expect(@forecast).to have_key(:errors)

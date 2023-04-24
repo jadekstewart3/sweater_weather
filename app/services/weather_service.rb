@@ -6,7 +6,7 @@ class WeatherService
 
   def forecast(coordinates)
     response = connection.get("forecast.json") do |req|
-      req.headers['Content-Type'] = 'application/json'
+      req.headers["Content-Type"] = "application/json"
       req.params["key"] = ENV["WEATHER_API_KEY"]
       req.params["q"] = "#{coordinates[:lat]},#{coordinates[:lng]}"
       req.params["days"] = 5

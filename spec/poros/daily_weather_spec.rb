@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe DailyWeather do 
-  describe "#initialize", :vcr do 
-    it "has the correct attributes" do 
+RSpec.describe DailyWeather do
+  describe "#initialize", :vcr do
+    it "has the correct attributes" do
       day_weather = WeatherFacade.new.get_forecast("denver, co").daily_weather.first
 
       expect(day_weather.date).to eq("2023-04-22")
