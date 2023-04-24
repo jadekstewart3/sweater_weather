@@ -1,4 +1,4 @@
-class Api::V0::ForecastController < ApplicationController
+class Api::V0::ForecastsController < ApplicationController
   def show
     if params[:location].empty?
       render json: { errors: "No matches found" }, status: :bad_request
