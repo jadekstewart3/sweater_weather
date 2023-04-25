@@ -36,7 +36,7 @@ class ErrorSerializer
 			errors: [
 					{
 			 			status: status.to_s,
-						title: @object.message,
+						title: @object.message
 					}
 				]
 			}
