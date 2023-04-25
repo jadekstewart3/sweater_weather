@@ -40,7 +40,7 @@
 
 ---
 <details>
-  <summary>GET: Root</summary>
+  <summary>GET: Forecast</summary>
 
   <br>
 
