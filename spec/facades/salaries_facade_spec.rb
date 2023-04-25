@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "SalariesFacade" do 
+RSpec.describe SalariesFacade do 
   describe "#instance methods", :vcr do 
     describe  "#get_city_salaries" do 
       before :each do 

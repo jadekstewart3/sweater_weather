@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post "/users",to: "users#create"
       get "/salaries", to: "salaries#show"
       post "/sessions", to: "users#login"
+      post "/road_trip", to: "road_trip#create"
     end
   end
 end

@@ -45,7 +45,7 @@ RSpec.describe "Users API" do
 
         post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(401)
         
         response_body = JSON.parse(response.body, symbolize_names: true)
 
@@ -76,7 +76,7 @@ RSpec.describe "Users API" do
 
         post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(401)
         
         response_body = JSON.parse(response.body, symbolize_names: true)
 
@@ -109,7 +109,7 @@ RSpec.describe "Users API" do
 
         post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
 
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(401)
         
         response_body = JSON.parse(response.body, symbolize_names: true)
 
