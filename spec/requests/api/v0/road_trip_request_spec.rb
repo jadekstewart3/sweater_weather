@@ -13,8 +13,11 @@ RSpec.describe "RoadTrip API" do
                             })
                           
         headers = {"CONTENT_TYPE" => "application/json"}
+
         post "/api/v0/road_trip", headers: headers, params: JSON.generate(road_trip_params)
+
         trip = JSON.parse(response.body, symbolize_names: true)
+
         expect(response).to be_successful
         expect(response).to have_http_status(200)
       
@@ -61,7 +64,9 @@ RSpec.describe "RoadTrip API" do
                             })
                           
         headers = {"CONTENT_TYPE" => "application/json"}
+
         post "/api/v0/road_trip", headers: headers, params: JSON.generate(road_trip_params)
+
         trip = JSON.parse(response.body, symbolize_names: true)
 
         expect(response).to be_successful
@@ -103,9 +108,11 @@ RSpec.describe "RoadTrip API" do
                             })
                           
         headers = {"CONTENT_TYPE" => "application/json"}
+
         post "/api/v0/road_trip", headers: headers, params: JSON.generate(road_trip_params)
      
         response_body = JSON.parse(response.body, symbolize_names: true)
+        
         expect(response).to_not be_successful
         expect(response).to have_http_status(401)
 

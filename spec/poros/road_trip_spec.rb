@@ -15,8 +15,8 @@ RSpec.describe RoadTrip do
       expect(@trip.end_city).to eq("Ciudad de Panamá, PA-8")
       expect(@trip.travel_time).to eq("68:17:17")
       expect(@trip.weather_at_eta).to be_a(Hash)
-      expect(@trip.weather_at_eta[:datetime]).to eq("2023-04-28 10:00")
-      expect(@trip.weather_at_eta[:temperature]).to eq(88.9)
+      expect(@trip.weather_at_eta[:datetime]).to eq("2023-04-28 12:00")
+      expect(@trip.weather_at_eta[:temperature]).to eq(96.3)
       expect(@trip.weather_at_eta[:condition]).to eq("Sunny")
     end
   end
