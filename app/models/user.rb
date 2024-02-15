@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :api_key, uniqueness: true
 
   private
+
   def downcase_email
     self.email = email.downcase if email.present?
   end
