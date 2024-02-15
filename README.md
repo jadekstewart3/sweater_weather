@@ -8,7 +8,7 @@
   - [Endpoints](#endpoints)
 
   ### Overview
-  Sweater Weather is a Rails API that consumes multiple third party API's to provide weather data for a destination that a person is travelling to. Requests and responses are in JSON format.
+  Sweater Weather is a Rails API that consumes multiple third party API's to provide weather data for a destination that a person is traveling to. Requests and responses are in JSON format.
 
   ### Built With
   ![Ruby 3.1.1](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
